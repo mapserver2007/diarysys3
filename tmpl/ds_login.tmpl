@@ -1,0 +1,11 @@
+<?php if($items) : ?>
+<form action="index.php" method="POST" style="margin:0px;">
+	<input type="hidden" name="logout" value="logout" />
+	<input type="submit" value="LOGOUT" class="submit" />
+</form>
+<?php else : ?>
+<form action="index.php" method="POST" style="margin:0px;">
+	<input id="form_login" type="password" name="login" class="form" style="width:120px;" />
+	<input type="submit" value="LOGIN" class="submit" />
+</form>
+<?php endif ?>

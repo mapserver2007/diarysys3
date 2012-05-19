@@ -1,0 +1,13 @@
+<ul>
+<?php foreach($items as $key => $val) : ?>
+	<!-- カテゴリ一覧 -->
+	<li>
+		<span style="font-size:<?php echo $val['tsize']; ?>">
+			<a href="<?php echo $base_url."?m=tag&tid=".$val['tid']; ?>">
+				<?php echo $val['tname']; ?>
+			</a>
+			<sup><?php echo $val['tref']; ?></sup>
+		</span>
+	</li>
+<?php endforeach ?>
+</ul>

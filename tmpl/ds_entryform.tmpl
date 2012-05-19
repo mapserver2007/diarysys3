@@ -1,0 +1,80 @@
+<div class="ds_entry">
+	<form action="index.php" method="POST" style="margin:0px;">
+	<!-- タイトル -->
+	<p id="ds_entry_input_header">ENTRY FORM</p>
+	<?php if($items["Title"]["Flg"]) : ?>
+	<p class="ds_entry_input_title">
+		TITLE
+		<span class="ds_entry_input_error"><?php echo $items["Title"]["Message"]; ?></span>
+	</p>
+	<input type="text" name="ds_title" class="form" style="width:574px; background-color:#ffcccc;" />
+	<?php else : ?>
+	<p class="ds_entry_input_title">TITLE</p>
+	<input type="text" name="ds_title" class="form" style="width:574px;" value="<?php echo $items["Title"]["Value"]; ?>" />
+	<?php endif ?>
+	<!-- 内容 -->
+	<?php if($items["Description"]["Flg"]) : ?>
+	<p class="ds_entry_input_title">
+		DESCRIPTION
+		<span class="ds_entry_input_error"><?php echo $items["Description"]["Message"]; ?></span>
+	</p>
+	<div id="ds_entry_description_htmltag">
+		<script type="text/javascript">edToolbar();</script>
+	</div>
+	<div id="ds_entry_amazon_form"></div>
+	<textarea id="ds_description_form" name="ds_description" class="form_textarea" style="width:574px; height:300px; background-color:#ffcccc;" onkeyup="doCommentPreview();" onblur="doCommentPreview();"></textarea>
+	<p class="ds_entry_input_title">DESCRIPTION PREVIEW</p>
+	<div id="ds_description_preview" class="ds_entry_description_quick"></div>
+	<?php else : ?>
+	<p class="ds_entry_input_title">DESCRIPTION</p>
+	<div id="ds_entry_description_htmltag">
+		<script type="text/javascript">edToolbar();</script>
+	</div>
+	<div id="ds_entry_amazon_form"></div>
+	<textarea id="ds_description_form" name="ds_description" class="form_textarea" style="width:574px; height:300px;" onkeyup="doCommentPreview();" onblur="doCommentPreview();"><?php echo $items["Description"]["Value"]; ?></textarea>
+	<p class="ds_entry_input_title">DESCRIPTION PREVIEW</p>
+	<div id="ds_description_preview" class="ds_entry_description_quick"></div>
+	<?php endif ?>
+	<!-- タグ -->
+	<?php if($items["Tag"]["Flg"]) : ?>
+	<p class="ds_entry_input_title">
+		TAG
+		<span class="ds_entry_input_error"><?php echo $items["Tag"]["Message"]; ?></span>
+	</p>
+	<?php else : ?>
+	<p class="ds_entry_input_title">TAG</p>
+	<?php endif ?>
+	<div id="tag_register">
+		<?php if($items["Tag"]["Value"]) : ?>
+		<?php
+			mb_convert_variables("UTF-8", "EUC-JP", $items["Tag"]["Value"]);
+			$json = new Services_JSON; 
+			$encode = $json->encode($items["Tag"]["Value"]);
+		?>
+		<script type="text/javascript">callRegisteredTag(<?php echo $encode; ?>);</script>
+		<?php else : ?>
+		<p id="tag_default" style="padding:2px;">タグを登録してください</p>
+		<?php endif ?>
+	</div>
+	<div id="tag_all">
+		<a href="javascript:void(0);">
+			<span class="ds_entry_input_title" onClick="showAllTags();">タグ一覧</span>
+		</a>
+		<input type="text" id="tag_regexp" class="form" />
+	</div>
+	<div id="tag_create">
+		<a href="javascript:void(0);">
+			<span class="ds_entry_input_title" onClick="createNewTag();">タグ新規作成</span>
+		</a>
+	</div>
+	<!-- 送信 -->
+	<p class="ds_entry_input_title">SUBMIT</p>
+	<input type="hidden" name="m" value="entry" />
+	<input type="password" name="ds_passwd" class="form" style="width:100px;"/>
+	<input type="submit" value="日記を登録" class="submit" />
+	<?php if($items["Passwd"]["Flg"]) : ?>
+	<span class="ds_entry_input_error"><?php echo $items["Passwd"]["Message"]; ?></span>
+	<?php endif ?>
+	</form>
+	<script type="text/javascript">doCommentPreview('init');</script>
+</div>

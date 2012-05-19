@@ -1,0 +1,11 @@
+<ul>
+<?php foreach($items as $key => $val) : ?>
+	<!-- 月別アーカイブ -->
+	<li>
+		<a href="<?php echo $base_url."?m=month&month=".$val['month']; ?>">
+		<?php echo $val['str']; ?>
+		</a>
+		<sup><?php echo $val['count']; ?></sup>
+	</li>
+<?php endforeach ?>
+</ul>

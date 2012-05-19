@@ -1,0 +1,459 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+body div {
+	text-align: left;
+	margin: 0 auto;
+}
+
+p {
+	margin: 0px;
+	padding: 0px;
+}
+
+/* 魔法のタグ */
+* { box-sizing : border-box}
+* { -moz-box-sizing : border-box}
+
+/* フォーム共通 */
+.form {
+	border:1px solid #808080;
+	margin: 0px; 
+}
+
+.form_textarea {
+	border:1px solid #808080;
+	margin: 0px; 
+}
+
+/* サブミット共通 */
+.submit {
+	background:#CCCCCC url(../images/bg_submit.gif) repeat-x scroll 0%;
+	border-color:#CCCCCC rgb(153, 153, 153) rgb(102, 102, 102);
+	border-style:solid;
+	border-width:1px;
+	font-size:12px;
+	margin:0px;
+	padding:4px;
+}
+
+/* BOX共通 */
+.box {
+	background-color:#FFFFFF;
+	border:1px solid #808080;
+	color: #666;
+	font-family: Verdana, Arial, sans-serif;
+	overflow:hidden;
+	margin: auto;
+}
+
+/* BOXメイン */
+#box_main {
+	width: 800px;
+}
+
+/* BOXタイトル */
+#box_title {
+	font-size: medium;
+	border-bottom:1px solid #808080;
+}
+
+/* BOXアイコン */
+#box_icon {
+	text-align: right;
+	background-color:#FFE3E3;
+	border-bottom:1px solid #808080;
+	height:20px;
+	padding: 2px;
+}
+
+/* BOXリンク */
+#box_link {
+	text-align:center;
+	border-bottom:1px solid #808080;
+	font-size: 12px;
+}
+
+#box_link a {
+	text-decoration: none; 
+}
+
+/* メインコンテナ */
+#ds_container {
+
+}
+
+/* ヘッダ */
+#box_c_title {
+	clear: both;
+	width: 800px;
+	padding-bottom: 10px;
+}
+
+/* メイン */
+#ds_main {
+	float: left;
+	width: 600px;
+	border: 0px;
+}
+
+/* エントリ共通 */
+.ds_entry {
+	margin-left: 10px;
+	margin-bottom: 20px;
+	width: 580px;
+}
+
+/* エントリ日付 */
+#ds_entry_date {
+	/*float:left;*/
+	font-family: MS UI Gothic, Verdana, Arial, sans-serif;
+	font-size : 14px;
+	font-weight: bold;
+	border-left-width:thick;
+	border-left-style : solid;
+	border-left-color : #6699ff;
+	border-bottom-width : 1px;
+	border-bottom-style : solid;
+	border-bottom-color : #6699ff;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* エントリタイトル */
+#ds_entry_title {
+	font-family: Verdana, Arial, sans-serif;
+	font-size : 14px;
+	margin: 0px;
+	padding-left: 20px;
+	background: #FFFFFF url(../images/entry_list.gif) no-repeat scroll 0%;
+}
+
+/* エントリ本文 */
+#ds_entry_description {
+	font-family: Verdana, Arial, sans-serif;
+	font-size : 12px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin: 10px;
+	padding: 0px;
+}
+
+.ds_entry_description_quick {
+
+}
+
+/* エントリプレビュー */
+#ds_description_preview {
+	font-family: Verdana, Arial, sans-serif;
+	font-size : small;
+	background: #FFFFFF url(../images/recent3.gif) no-repeat scroll 0%;
+	padding-left: 24px;
+	margin: 0px;
+}
+
+/* エントリHTMLタグ */
+#ds_entry_description_htmltag {
+	background: #FFFFFF url(../images/tag.gif) no-repeat scroll 0%;
+	padding-left: 24px;
+	padding-right: 2px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-size: small;
+	margin: 1px;
+}
+
+/* amazon拡張 */
+#ds_entry_amazon_form {
+	background: #FFFFFF url(../images/amazon-icon.png) no-repeat scroll 0%;
+	vertical-align:middle;
+	font-size: small;
+	width: 574px;
+	margin: 0px;
+	padding-left: 20px;
+}
+
+#ds_entry_amazon_form div {
+	margin-bottom: 3px;
+}
+
+/* amazon表示 */
+.ds_entry_amazon_box {
+	both: clear;
+	background: #EEEEEE none repeat scroll 0%;
+	border: 1px solid #AAAAAA;
+	padding: 10px;
+	margin: 10px;
+}
+
+
+/* エントリタグ */
+#ds_entry_tag {
+	background: #FFFFFF url(../images/tag.gif) no-repeat scroll 0%;
+	vertical-align:middle;
+	padding-left: 20px;
+	font-size: small;
+	margin: 0px;
+}
+
+/* エントリ入力ヘッダ */
+#ds_entry_input_header {
+	/*float:left;*/
+	font-family: MS UI Gothic, Verdana, Arial, sans-serif;
+	font-size : 14px;
+	font-weight: bold;
+	border-left-width:thick;
+	border-left-style : solid;
+	border-left-color : #6699ff;
+	border-bottom-width : 1px;
+	border-bottom-style : solid;
+	border-bottom-color : #6699ff;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* 各種入力タイトル */
+.ds_entry_input_title {
+	font-family: Verdana, Arial, sans-serif;
+	font-size : 14px;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* 各種入力エラー */
+.ds_entry_input_error {
+	font-family: Verdana, Arial, sans-serif;
+	font-weight: bold;
+	color: red;
+	font-size : 14px;
+	margin: 0px;
+	padding: 7px;
+}
+
+/* 天気画像 */
+.ds_weather_img {
+	width: 25px;
+	height: 15px;
+	vertical-align: middle;
+}
+
+/* エディット */
+.ds_edit {
+	font-family: Verdana, Arial, sans-serif;
+	margin: 10px;
+	padding: 0px;
+}
+
+
+/* ポップアップ */
+.ds_popup {
+	position: absolute;
+	z-index: 100;
+}
+
+/* ポップアップ閉じる */
+#ds_popup_close {
+	position: absolute;
+	z-index: 102;
+	right: 0px;
+	top: 0px;
+	cursor: pointer;
+}
+
+.ds_popup_text {
+	position: absolute;
+	z-index: 101;
+	width: 196px;
+	height: 150px;
+	margin-top: 20px;
+	margin-left: 20px;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: small;
+	color: #666;
+}
+
+/* タグ一覧 */
+#tag_all_list {
+	width: 500px;
+	font-size: small;
+	border:1px dashed #808080;
+	margin: 4px 0px 0px 0px;
+}
+
+#tag_all_list ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+#tag_all_list li {
+	display: inline;
+	margin-right: 4px;
+	cursor: pointer;
+}
+
+#tag_register {
+	background: #FFFFFF url(../images/tag.gif) no-repeat scroll 0%;
+	padding-left: 24px;
+	font-size: small;
+	margin: 0px;
+}
+
+#tag_all, #tag_create {
+	margin: 0px;
+	padding: 3px 0px 3px 24px;
+}
+
+#tag_create_result {
+	padding-left: 5px;
+	font-size: small;
+	margin: 0px;
+}
+
+#tag_regexp {
+	width: 120px;
+	margin-left: 5px;
+	height: 20px;
+	font-size:small;
+}
+
+.tagHilite { background-color: #ffff00; }
+
+/* サイドメニュー */
+#ds_side_menu {
+	float: left;
+	width: 196px;
+}
+
+/* ログイン */
+#ds_login {
+	font-family: Verdana, Arial, sans-serif;
+	font-weight: bolder;
+	border:1px solid #808080;
+	margin: 0px 0px 10px 0px;
+	padding: 10px;
+}
+
+/* フォームログイン */
+#form_login {
+	background: #FFFFFF url(../images/login.png) no-repeat scroll 0%;
+	padding-left: 24px;
+	height: 18px;
+	font-size:12px;
+}
+
+/* サイドバー */
+#ds_side {
+	font-family: Verdana, Arial, sans-serif;
+	border:1px solid #808080;
+	/*background-color: #ffe3e3;*/
+	margin: 0px;
+	padding: 0px;
+}
+
+/* サイドバータイトル */
+.ds_side_title {
+	color: #ffffff;
+	background-color: #bbbbbb;
+	font-family: Verdana, Arial, sans-serif;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 12px;
+}
+
+/* サイドバー最近のエントリ */
+#ds_side_recent {
+	font-size: small;
+}
+
+/* サイドバー最近のエントリ(リスト) */
+#ds_side_recent ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+#ds_side_recent li {
+	text-align: left;
+	margin-left: 2px;
+	padding-left: 10px;
+	list-style-type:none;
+	background: url(../images/list.gif) no-repeat scroll left center;
+}
+
+/* サイドバーカテゴリ */
+#ds_side_category {
+	font-size: small;
+}
+
+#ds_side_category ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+#ds_side_category li {
+	text-align: left;
+	margin-left: 2px;
+	padding-left: 10px;
+	list-style-type:none;
+	background: url(../images/list.gif) no-repeat scroll left center;
+}
+
+/* サイドバーアーカイブ */
+#ds_side_archive {
+	font-size: small;
+}
+
+#ds_side_archive ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+#ds_side_archive li {
+	text-align: left;
+	margin-left: 2px;
+	padding-left: 10px;
+	list-style-type:none;
+	background: url(../images/list.gif) no-repeat scroll left center;
+}
+
+/* サイドバーリンク */
+#ds_side_link {
+	font-size: small;
+}
+
+#ds_side_link ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+#ds_side_link li {
+	text-align: left;
+	margin-left: 2px;
+	padding-left: 10px;
+	list-style-type:none;
+	background: url(../images/list.gif) no-repeat scroll left center;
+}
+
+/* Pager */
+#ds_pager {
+	margin-left: 10px;
+	margin-bottom: 5px;
+	width: 580px;
+	background: #E2E5EA none repeat scroll 0%;
+	border: 1px solid #CED5E1;
+	color: #39546A;
+}
+
+#ds_pager ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type:none;
+}
+
+#ds_pager li {
+	float:left;
+	padding-left: 4px;
+	/*display: inline;*/
+}

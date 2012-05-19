@@ -1,0 +1,10 @@
+<ul>
+<?php foreach($items as $key => $val) : ?>
+	<!-- 最近のエントリ -->
+	<li>
+		<a href="<?php echo $val['url']; ?>" target="_blank">
+			<?php echo $val['title']; ?>
+		</a>
+	</li>
+<?php endforeach ?>
+</ul>

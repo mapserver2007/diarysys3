@@ -1,0 +1,65 @@
+<?php foreach($items as $key => $val) : ?>
+<?php if($val["mode"] == "edit" || $val["mode"] == "delete") : ?>
+<div class="ds_entry" style="border:1px solid #808080; padding:10px; width:560px;">
+<?php else : ?>
+<div class="ds_entry">
+<?php endif ?>
+	<!-- 日付 -->
+	<p id="ds_entry_date">
+		<?php echo $val['date']; ?>
+	</p>
+	<!-- タイトル -->
+	<p id="ds_entry_title">
+		<a href="<?php echo $base_url."?id=".$val['id']; ?>">
+		<?php echo $val['title']; ?>
+		</a>
+		<!-- 天気 -->
+		<span id="<?php echo "w_".$val['weather']['wid']; ?>" style="cursor:pointer;" onClick="showWeatherInfo(this);">
+			<img src="<?php echo $val['weather']['w_imgurl']; ?>" class="ds_weather_img" />
+		</span>
+		<!-- タグ -->
+		<span id="ds_entry_tag">
+		<?php foreach($val['tag'] as $tk => $tv) : ?>
+		<a href="<?php echo $base_url."?m=tag&tid=".$val['tag'][$tk]['tid']; ?>"><?php echo "[".$val['tag'][$tk]['tname']."]"; ?></a>
+		<?php endforeach ?>
+		</span>
+	</p>
+	<!-- 本文 -->
+	<div id="ds_entry_description" class="ds_entry_description_quick">
+		<?php echo $val['description']; ?>
+	</div>
+	<?php if($val["admin"]) : ?>
+	<div class="ds_edit">
+		<span style="font-size:x-small;">
+			<img src="images/edit.png" style="vertical-align: middle;" />
+			<a href="<?php echo $base_url."?m=revision&id=".$val['id']; ?>">[エントリ編集]</a>
+		</span>
+		<span style="font-size:x-small;">
+			<img src="images/delete.png" style="vertical-align: middle;" />
+			<a href="<?php echo $base_url."?m=delete&id=".$val['id']; ?>">[エントリ削除]</a>
+		</span>
+	</div>
+	<?php endif ?>
+</div>
+<?php endforeach ?>
+<?php if($val["mode"] == "edit") : ?>
+<div class="ds_entry" style="font-size:small;">
+	エントリを編集しました
+	<a href="<?php echo $base_url; ?>">[戻る]</a>
+</div>
+<?php elseif($val["mode"] == "delete") : ?>
+<div class="ds_entry" style="font-size:small; padding-bottom:1px;">
+	<form action="index.php" method="POST" style="margin:0px;">
+		<p class="ds_entry_input_title">DELETE PASS</p>
+		<input type="hidden" name="m" value="delete" />
+		<input type="hidden" name="id" value="<?php echo $val["id"]; ?>" />
+		<input type="password" name="ds_passwd" class="form" style="width:100px;"/>
+		<input type="submit" value="日記を削除" class="submit" />
+		<?php if($val["error"]) : ?>
+		<span class="ds_entry_input_error"><?php echo $val["error"]; ?></span>
+		<?php endif ?>
+	</form>
+</div>
+<?php endif ?>
+<script type="text/javascript">setPager(<?php echo $val["count"]["start"]; ?>, <?php echo $val["count"]["all"]; ?>, 
+	<?php echo $val["count"]["crtpage"]; ?>);</script>

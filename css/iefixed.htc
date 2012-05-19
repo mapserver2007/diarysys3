@@ -1,0 +1,56 @@
+/* 
+ * ieFixed.htc version 0.0.2
+ * Copyright 2007 youmos <youmos.com@gmail.com>
+ * http://youmos.com/
+ * 
+ * The ieFixed is licensed under a 
+ * Creative Commons Attribution-NonCommercial License.
+ *
+ * http://creativecommons.org/licenses/by-nc/3.0/
+ *
+ * It is provided "as is" and without warranty of any kind. If you wish to continue to use it,
+ * free for personal or non-commercial use, $20 (\2,500) for commercial use.
+ * The permission is valid for all future versions of ieFixed.
+*/
+/*--- iefixed.htc ---*/
+<public:component>
+<public:attach event="oncontentready" onevent="if(ieFixed)ieFixed.append()" />
+<script type="text/javascript">
+var ieFixed;
+
+if(/MSIE (6\.)/.test(navigator.userAgent)) {
+	ieFixed = {
+		append: function() {
+
+			/*-- cssProperty function --*/
+			var cssProperty = function(arg){
+				arg = currentStyle[arg] || style[arg];
+				return [arg, parseInt(arg)];
+			};
+
+			/*-- min-width & max-width --*/
+			var width = {min:cssProperty('min-width'), max:cssProperty('max-width'), exp:''};
+			
+			width.exp += (!isNaN(width.min[1]))? "document.body.clientWidth < " + (width.min[1]+2) + " ? '" + width.min[1] + "px' :" : "";
+			width.exp += (!isNaN(width.max[1]))? "document.body.clientWidth > " + (width.max[1]+2) + " ? '" + width.max[1] + "px' :" : "";
+			if(width.exp != '') {
+				style.setExpression("width", width.exp + "'auto'");
+			}else{
+				style.width = "auto";
+			}
+
+			/*-- min-height & max-height --*/
+			var height = {min:cssProperty('min-height'), max:cssProperty('max-height'), exp:''};
+			
+			height.exp += (!isNaN(height.min[1]))? "document.body.clientHeight < " + (height.min[1]+2) + " ? '" + height.min[1] + "px' :" : "";
+			height.exp += (!isNaN(height.max[1]))? "document.body.clientHeight > " + (height.max[1]+2) + " ? '" + height.max[1] + "px' :" : "";
+			if(height.exp != '') {
+				style.setExpression("height", height.exp + "'auto'");
+			}else{
+				style.height = "auto";
+			}
+		}
+	};
+}
+</script>
+</public:component>

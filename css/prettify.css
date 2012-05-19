@@ -1,0 +1,43 @@
+/* Pretty printing styles. Used with prettify.js. */
+.str { color: #080; }
+.kwd { color: #008; }
+.com { color: #800; }
+.typ { color: #606; }
+.lit { color: #066; }
+.pun { color: #660; }
+.pln { color: #000; }
+.tag { color: #008; }
+.atn { color: #606; }
+.atv { color: #080; }
+.dec { color: #606; }
+
+pre {
+	white-space: -moz-pre-wrap; /* Mozilla */
+	white-space: -pre-wrap;     /* Opera 4-6 */
+	white-space: -o-pre-wrap;   /* Opera 7 */
+	white-space: pre-wrap;      /* CSS3 */
+	word-wrap: break-word;      /* IE 5.5+ */
+}
+
+pre.prettyprint {
+	padding: 0.5em 48px;
+	margin-left: 20px;
+	border: 1px solid #888;
+	font-family: Verdana, Arial, sans-serif;
+	font-size : small;
+	background:transparent url(../images/bg_quote_left.png) no-repeat scroll left top;
+	overflow: auto;
+}
+
+@media print {
+  .str { color: #060; }
+  .kwd { color: #006; font-weight: bold; }
+  .com { color: #600; font-style: italic; }
+  .typ { color: #404; font-weight: bold; }
+  .lit { color: #044; }
+  .pun { color: #440; }
+  .pln { color: #000; }
+  .tag { color: #006; font-weight: bold; }
+  .atn { color: #404; }
+  .atv { color: #060; }
+}

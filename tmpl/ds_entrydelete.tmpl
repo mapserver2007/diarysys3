@@ -1,0 +1,28 @@
+<?php foreach($items as $key => $val) : ?>
+<div class="ds_entry" style="border:1px solid #808080; padding:10px; margin:0px 10px;">
+	<!-- 日付 -->
+	<p id="ds_entry_date">
+		<?php echo $val['date']; ?>
+	</p>
+	<!-- タイトル -->
+	<p id="ds_entry_title">
+		<a href="<?php echo $base_url."?id=".$val['id']; ?>">
+		<?php echo $val['title']; ?>
+		</a>
+		<!-- 天気 -->
+		<span id="<?php echo "w_".$val['weather']['wid']; ?>" style="cursor:pointer;" onClick="showWeatherInfo(this);">
+			<img src="<?php echo $val['weather']['w_imgurl']; ?>" class="ds_weather_img" />
+		</span>
+		<!-- タグ -->
+		<span id="ds_entry_tag">
+		<?php foreach($val['tag'] as $tk => $tv) : ?>
+		<a href="<?php echo $base_url."?m=tag&tid=".$val['tag'][$tk]['tid']; ?>"><?php echo "[".$val['tag'][$tk]['tname']."]"; ?></a>
+		<?php endforeach ?>
+		</span>
+	</p>
+	<!-- 本文 -->
+	<div id="ds_entry_description" class="ds_entry_description_quick">
+		<?php echo $val['description']; ?>
+	</div>
+</div>
+<?php endforeach ?>
